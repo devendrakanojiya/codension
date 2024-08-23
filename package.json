@@ -1,0 +1,107 @@
+{
+  "name": "devendrakanojiya",
+  "displayName": "devendrakanojiya",
+  "description": "A modified github theme ",
+  "version": "0.0.3",
+  "publisher": "devendrakanojiya",
+  "license": "MIT",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#1b1f23",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devendrakanojiya/codension"
+  },
+  "bugs": {
+    "url": "https://github.com/devendrakanojiya/codension/issues"
+  },
+  "engines": {
+    "vscode": "^1.43.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "github",
+    "light",
+    "dark",
+    "protanopia",
+    "colorblind"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "DK Light Default",
+        "uiTheme": "vs",
+        "path": "./themes/light-default.json"
+      },
+      {
+        "label": "DK Light High Contrast",
+        "uiTheme": "hc-light",
+        "path": "./themes/light-high-contrast.json"
+      },
+      {
+        "label": "DK Light Colorblind (Beta)",
+        "uiTheme": "vs",
+        "path": "./themes/light-colorblind.json"
+      },
+      {
+        "label": "DK Dark Default",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark-default.json"
+      },
+      {
+        "label": "DK Dark High Contrast",
+        "uiTheme": "hc-black",
+        "path": "./themes/dark-high-contrast.json"
+      },
+      {
+        "label": "DK Dark Colorblind (Beta)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark-colorblind.json"
+      },
+      {
+        "label": "DK Dark Dimmed",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark-dimmed.json"
+      },
+      {
+        "label": "DK Light",
+        "uiTheme": "vs",
+        "path": "./themes/light.json"
+      },
+      {
+        "label": "DK Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.4.1",
+    "@changesets/cli": "^2.17.0",
+    "@primer/primitives": "7.10.0",
+    "chroma-js": "^2.1.2",
+    "color": "^3.1.2",
+    "nodemon": "^2.0.3",
+    "vsce": "^1.100.1"
+  },
+  "scripts": {
+    "start": "nodemon --watch src src/index.js",
+    "build": "node src/index.js && mkdir -p build",
+    "package": "vsce package -o ./build/devendrakanojiya.vsix",
+    "prepublishOnly": "npm run build && vsce publish",
+    "release": "changeset publish"
+  },
+  "__metadata": {
+    "id": "7328a705-91fc-49e6-8293-da6f112e482d",
+    "publisherDisplayName": "devendrakanojiya",
+    "publisherId": "7c1c19cd-78eb-4dfb-8999-99caf7679002"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
